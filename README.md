@@ -17,3 +17,6 @@ pip install -r requirements.txt
 
 Run the Streamlit app:
 streamlit run host.py
+
+
+follow this https://ipl-match-prediction.streamlit.app/
