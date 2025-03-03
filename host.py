@@ -60,7 +60,8 @@ with col3:
     score = st.number_input('🏏 Current Score', min_value=0, max_value=500, step=1)
 
 with col4:
-    overs = st.number_input('⏳ Overs Completed', min_value=0.0, max_value=50.0, value=0.0, step=0.1, format="%.1f")
+   overs_options = [float(f"{over}.{ball}") for over in range(51) for ball in [0, 1, 2, 3, 4, 5]]
+overs = st.selectbox('⏳ Overs Completed', overs_options, index=0)
 
 with col5:
     wickets = st.number_input('❌ Wickets Lost', min_value=0, max_value=10, value=0, step=1, format="%d")
