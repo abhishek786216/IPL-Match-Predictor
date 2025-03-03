@@ -2,8 +2,11 @@ import streamlit as st
 import pickle
 import pandas as pd
 
-# Load the trained model
-pipe = pickle.load(open('pipe.pkl', 'rb'))
+import gzip
+
+
+with gzip.open('pipe.pkl.gz', 'rb') as f:
+    pipe = pickle.load(f)
 
 # Set page title and layout
 st.set_page_config(page_title="IPL Win Predictor", page_icon="🏏", layout="centered")
