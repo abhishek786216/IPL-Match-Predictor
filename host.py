@@ -1,12 +1,15 @@
 import streamlit as st
-import pickle
+
 import pandas as pd
 
 import gzip
+import pickle
+
+import joblib
+
+pipe = joblib.load('pipe_compressed.pkl')
 
 
-with gzip.open('pipe.pkl.gz', 'rb') as f:
-    pipe = pickle.load(f)
 
 # Set page title and layout
 st.set_page_config(page_title="IPL Win Predictor", page_icon="🏏", layout="centered")
