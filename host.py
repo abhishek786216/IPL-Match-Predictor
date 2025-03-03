@@ -60,7 +60,8 @@ with col3:
     score = st.number_input('🏏 Current Score', min_value=0, max_value=500, step=1)
 
 with col4:
-   overs_options = [float(f"{over}.{ball}") for over in range(51) for ball in [0, 1, 2, 3, 4, 5]]
+    overs_options = [float(f"{over}.{ball}") for over in range(20) for ball in [0, 1, 2, 3, 4, 5]]
+    overs = st.selectbox('⏳ Overs Completed', overs_options, index=0)
 
 
 with col5:
@@ -76,6 +77,7 @@ if st.button('🔮 Predict Winning Probability'):
         st.error("❌ Overs cannot be 0 if a score is already set. Please enter a valid number of overs.")
     elif overs == 0:
         st.warning("⚠️ Please enter the number of overs to calculate probability.")
+        
     elif batting_team == bowling_team:
         st.error("❌ Batting and Bowling teams cannot be the same.")
     else:
